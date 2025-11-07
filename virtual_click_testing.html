@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Counter Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .counter {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card" style="background-color: rgb(86, 231, 117); color: white;">
+      <h2>Card 1D</h2>
+      <div class="counter" id="counter1">0</div>
+      <button onclick="increaseCounter('counter1')">Add</button>
+    </div>
+    <div class="card" style="background-color: rgb(0, 64, 255); color: white;">
+      <h2>Card 2T</h2>
+      <div class="counter" id="counter2">0</div>
+      <button onclick="increaseCounter('counter2')">Add</button>
+    </div>
+    <div class="card" style="background-color: rgb(225, 97, 97); color: white;">
+      <h2>Card 3T</h2>
+      <div class="counter" id="counter3">0</div>
+      <button onclick="increaseCounter('counter3')">Add</button>
+    </div>
+  </div>
+
+  <script>
+    function increaseCounter(counterId) {
+      let counter = document.getElementById(counterId);
+      let currentValue = parseInt(counter.innerText);
+      counter.innerText = currentValue + 1;
+    }
+  </script>
+
+</body>
+</html>
